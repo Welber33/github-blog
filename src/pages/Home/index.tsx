@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Post } from "./components/Post";
 import { Profile } from "./components/Profile";
-import { SearchInput } from "./components/SearchInput";
+import { SearchInput } from "./components/searchInput";
 import { PostsListContainer } from "./styles";
 import { api } from "../../lib/axios";
 import { Loading } from "../../components/Loading";
@@ -10,7 +10,7 @@ const username = import.meta.env.VITE_GITHUB_USERNAME;
 const repoName = import.meta.env.VITE_GITHUB_REPONAME;
 
 export interface IPost {
-  id: number;
+  number: number;
   title: string;
   body: string;
   created_at: string;
@@ -52,7 +52,7 @@ export function Home() {
           <PostsListContainer>
             {posts.map((post) => (
               <Post
-                key={post.id}
+                key={post.number}
                 post={post}
               />
             ))}

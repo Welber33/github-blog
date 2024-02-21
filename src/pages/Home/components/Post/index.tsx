@@ -11,7 +11,7 @@ export function Post({ post }: PostProps) {
   const formattedDate = relativeDateFormatter(post.created_at);
 
   return (
-    <PostContainer to={`/post/${post.id}`}>
+    <PostContainer to={`/post/${post.number}`}>
       <div>
         <strong>{post.title}</strong>
         <span>{formattedDate}</span>
